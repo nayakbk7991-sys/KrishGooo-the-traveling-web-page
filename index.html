@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KrishGoooo - Bus Travel Made Easy</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="logo">
+            Krish<span>Goooo</span>
+        </div>
+
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#destinations">Destinations</a>
+            <a href="#features">Why Us</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <button class="menu-btn" id="menuBtn">
+            ☰
+        </button>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>
+                Travel More.
+                <span>Spend Less.</span>
+            </h1>
+
+            <p>
+                Discover amazing destinations with KrishGoooo.
+                Comfortable buses, simple booking and unforgettable journeys.
+            </p>
+
+        </div>
+
+
+        <!-- ================= SEARCH BOX ================= -->
+
+        <div class="search-box">
+
+            <div class="trip-option">
+
+                <label>
+                    <input type="radio" name="trip" value="oneway" checked>
+                    One way
+                </label>
+
+                <label>
+                    <input type="radio" name="trip" value="round">
+                    Round trip
+                </label>
+
+            </div>
+
+
+            <div class="search-fields">
+
+                <!-- FROM -->
+
+                <div class="input-group">
+
+                    <label for="from">
+                        From
+                    </label>
+
+                    <input
+                        type="text"
+                        id="from"
+                        placeholder="Departure city"
+                        autocomplete="off"
+                    >
+
+                    <div class="suggestions" id="fromSuggestions"></div>
+
+                </div>
+
+
+                <!-- SWAP -->
+
+                <button class="swap-btn" id="swapBtn">
+                    ⇄
+                </button>
+
+
+                <!-- TO -->
+
+                <div class="input-group">
+
+                    <label for="to">
+                        To
+                    </label>
+
+                    <input
+                        type="text"
+                        id="to"
+                        placeholder="Destination city"
+                        autocomplete="off"
+                    >
+
+                    <div class="suggestions" id="toSuggestions"></div>
+
+                </div>
+
+
+                <!-- DEPARTURE -->
+
+                <div class="input-group">
+
+                    <label for="departure">
+                        Departure
+                    </label>
+
+                    <input
+                        type="date"
+                        id="departure"
+                    >
+
+                </div>
+
+
+                <!-- RETURN -->
+
+                <div class="input-group return-field">
+
+                    <label for="returnDate">
+                        Return
+                    </label>
+
+                    <input
+                        type="date"
+                        id="returnDate"
+                    >
+
+                </div>
+
+
+                <!-- PASSENGERS -->
+
+                <div class="input-group">
+
+                    <label for="passengers">
+                        Passengers
+                    </label>
+
+                    <select id="passengers">
+
+                        <option value="1">
+                            1 Passenger
+                        </option>
+
+                        <option value="2">
+                            2 Passengers
+                        </option>
+
+                        <option value="3">
+                            3 Passengers
+                        </option>
+
+                        <option value="4">
+                            4 Passengers
+                        </option>
+
+                        <option value="5">
+                            5 Passengers
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- SEARCH BUTTON -->
+
+                <button class="search-btn" id="searchBtn">
+                    Search
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SEARCH RESULT ================= -->
+
+    <section class="results-section" id="results">
+
+        <div class="container">
+
+            <h2 id="resultTitle">
+                Search for your journey
+            </h2>
+
+            <div id="resultsContainer"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FEATURES ================= -->
+
+    <section class="features" id="features">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <h2>
+                    Why travel with KrishGoooo?
+                </h2>
+
+                <p>
+                    Everything you need for a comfortable journey.
+                </p>
+
+            </div>
+
+
+            <div class="feature-grid">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        🚌
+                    </div>
+
+                    <h3>
+                        Comfortable Buses
+                    </h3>
+
+                    <p>
+                        Relax with comfortable seats,
+                        air conditioning and charging facilities.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        🛡️
+                    </div>
+
+                    <h3>
+                        Safe Travel
+                    </h3>
+
+                    <p>
+                        Travel with confidence on carefully
+                        selected routes and buses.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        💰
+                    </div>
+
+                    <h3>
+                        Affordable Prices
+                    </h3>
+
+                    <p>
+                        Find affordable travel options
+                        for your next adventure.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        📱
+                    </div>
+
+                    <h3>
+                        Easy Booking
+                    </h3>
+
+                    <p>
+                        Search and plan your journey
+                        quickly from any device.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= DESTINATIONS ================= -->
+
+    <section class="destinations" id="destinations">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <h2>
+                    Popular destinations
+                </h2>
+
+                <p>
+                    Start your next adventure.
+                </p>
+
+            </div>
+
+
+            <div class="destination-grid">
+
+
+                <div
+                    class="destination-card"
+                    data-city="Mumbai"
+                >
+
+                    <div class="destination-image mumbai">
+                        <span>Mumbai</span>
+                    </div>
+
+                    <div class="destination-content">
+
+                        <h3>
+                            Mumbai
+                        </h3>
+
+                        <p>
+                            The city that never sleeps.
+                        </p>
+
+                        <button class="destination-btn">
+                            Explore
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="destination-card"
+                    data-city="Pune"
+                >
+
+                    <div class="destination-image pune">
+                        <span>Pune</span>
+                    </div>
+
+                    <div class="destination-content">
+
+                        <h3>
+                            Pune
+                        </h3>
+
+                        <p>
+                            Culture, food and adventure.
+                        </p>
+
+                        <button class="destination-btn">
+                            Explore
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="destination-card"
+                    data-city="Delhi"
+                >
+
+                    <div class="destination-image delhi">
+                        <span>Delhi</span>
+                    </div>
+
+                    <div class="destination-content">
+
+                        <h3>
+                            Delhi
+                        </h3>
+
+                        <p>
+                            History meets modern India.
+                        </p>
+
+                        <button class="destination-btn">
+                            Explore
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="destination-card"
+                    data-city="Goa"
+                >
+
+                    <div class="destination-image goa">
+                        <span>Goa</span>
+                    </div>
+
+                    <div class="destination-content">
+
+                        <h3>
+                            Goa
+                        </h3>
+
+                        <p>
+                            Beaches, sunsets and memories.
+                        </p>
+
+                        <button class="destination-btn">
+                            Explore
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= HOW IT WORKS ================= -->
+
+    <section class="how-it-works">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <h2>
+                    How KrishGoooo works
+                </h2>
+
+            </div>
+
+
+            <div class="steps">
+
+                <div class="step">
+
+                    <div class="step-number">
+                        1
+                    </div>
+
+                    <h3>
+                        Search
+                    </h3>
+
+                    <p>
+                        Enter your departure and destination.
+                    </p>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="step-number">
+                        2
+                    </div>
+
+                    <h3>
+                        Choose
+                    </h3>
+
+                    <p>
+                        Compare available travel options.
+                    </p>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="step-number">
+                        3
+                    </div>
+
+                    <h3>
+                        Book
+                    </h3>
+
+                    <p>
+                        Select your preferred journey.
+                    </p>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="step-number">
+                        4
+                    </div>
+
+                    <h3>
+                        Travel
+                    </h3>
+
+                    <p>
+                        Pack your bags and enjoy the journey.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section class="about" id="about">
+
+        <div class="container about-container">
+
+            <div class="about-text">
+
+                <span class="small-title">
+                    ABOUT KRISHGOOOOO
+                </span>
+
+                <h2>
+                    Your journey begins here.
+                </h2>
+
+                <p>
+                    KrishGoooo is a travel platform concept
+                    designed to make bus travel simple,
+                    affordable and enjoyable.
+                </p>
+
+                <p>
+                    Search destinations, discover new places
+                    and plan your next adventure.
+                </p>
+
+                <button class="primary-btn" id="aboutBtn">
+                    Start Exploring
+                </button>
+
+            </div>
+
+
+            <div class="about-box">
+
+                <div class="about-stat">
+
+                    <strong>
+                        100+
+                    </strong>
+
+                    <span>
+                        Destinations
+                    </span>
+
+                </div>
+
+
+                <div class="about-stat">
+
+                    <strong>
+                        24/7
+                    </strong>
+
+                    <span>
+                        Travel Planning
+                    </span>
+
+                </div>
+
+
+                <div class="about-stat">
+
+                    <strong>
+                        100%
+                    </strong>
+
+                    <span>
+                        Adventure
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <div class="logo">
+                    Krish<span>Goooo</span>
+                </div>
+
+                <p>
+                    Travel more. Discover more.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Explore
+                </h4>
+
+                <a href="#home">
+                    Home
+                </a>
+
+                <a href="#destinations">
+                    Destinations
+                </a>
+
+                <a href="#features">
+                    Why Us
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Support
+                </h4>
+
+                <a href="#">
+                    Help
+                </a>
+
+                <a href="#">
+                    Contact
+                </a>
+
+                <a href="#">
+                    FAQ
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Follow
+                </h4>
+
+                <a href="#">
+                    Instagram
+                </a>
+
+                <a href="#">
+                    Facebook
+                </a>
+
+                <a href="#">
+                    YouTube
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 KrishGoooo. All rights reserved.
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

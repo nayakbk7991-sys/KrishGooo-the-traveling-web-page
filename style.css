@@ -1,0 +1,887 @@
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    background: #ffffff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+select {
+    font-family: inherit;
+}
+
+.container {
+    width: min(1200px, 92%);
+    margin: auto;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header {
+    height: 76px;
+    padding: 0 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #eeeeee;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 900;
+    color: #111111;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: #1473e6;
+}
+
+.navbar {
+    display: flex;
+    gap: 35px;
+}
+
+.navbar a {
+    font-weight: 600;
+    color: #333;
+    transition: 0.2s;
+}
+
+.navbar a:hover {
+    color: #1473e6;
+}
+
+.menu-btn {
+    display: none;
+
+    background: none;
+    border: none;
+
+    font-size: 28px;
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    min-height: 570px;
+
+    padding: 90px 5% 100px;
+
+    background:
+        linear-gradient(
+            rgba(0, 30, 60, 0.70),
+            rgba(0, 20, 40, 0.75)
+        ),
+        url("https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1800&q=80");
+
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+
+    position: relative;
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 6vw, 75px);
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #56c5ff;
+}
+
+.hero-content p {
+    font-size: 20px;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: auto;
+}
+
+
+/* =====================================================
+   SEARCH BOX
+===================================================== */
+
+.search-box {
+    max-width: 1200px;
+
+    margin: 55px auto 0;
+
+    background: white;
+    color: #222;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 15px 50px rgba(0, 0, 0, 0.25);
+}
+
+.trip-option {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.trip-option label {
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.search-fields {
+    display: grid;
+
+    grid-template-columns:
+        1.2fr
+        40px
+        1.2fr
+        1fr
+        1fr
+        1fr
+        auto;
+
+    gap: 10px;
+
+    align-items: end;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-group label {
+    display: block;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    margin-bottom: 7px;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+
+    height: 50px;
+
+    border: 1px solid #cccccc;
+
+    border-radius: 8px;
+
+    padding: 0 13px;
+
+    outline: none;
+
+    font-size: 15px;
+
+    background: white;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #1473e6;
+}
+
+.swap-btn {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    border: 1px solid #ddd;
+
+    background: white;
+
+    cursor: pointer;
+
+    font-size: 20px;
+
+    transition: 0.2s;
+}
+
+.swap-btn:hover {
+    background: #1473e6;
+    color: white;
+}
+
+.search-btn {
+    height: 50px;
+
+    padding: 0 25px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #1473e6;
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.search-btn:hover {
+    background: #0d5ec4;
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   SUGGESTIONS
+===================================================== */
+
+.suggestions {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    top: 78px;
+
+    background: white;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    z-index: 100;
+
+    display: none;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.suggestion {
+    padding: 12px 15px;
+
+    cursor: pointer;
+
+    color: #222;
+}
+
+.suggestion:hover {
+    background: #f1f5f9;
+}
+
+
+/* =====================================================
+   RESULTS
+===================================================== */
+
+.results-section {
+    padding: 60px 0;
+
+    background: #f7f8fa;
+}
+
+.results-section h2 {
+    margin-bottom: 25px;
+}
+
+.bus-result {
+    background: white;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    margin-bottom: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.bus-info h3 {
+    margin-bottom: 7px;
+}
+
+.bus-route {
+    color: #666;
+}
+
+.bus-time {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.price {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.book-btn {
+    border: none;
+
+    padding: 12px 25px;
+
+    background: #1473e6;
+    color: white;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   SECTION HEADINGS
+===================================================== */
+
+section:not(.hero) {
+    padding: 90px 0;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-heading h2 {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.section-heading p {
+    color: #666;
+    font-size: 18px;
+}
+
+
+/* =====================================================
+   FEATURES
+===================================================== */
+
+.features {
+    background: white;
+}
+
+.feature-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+.feature-card {
+    text-align: center;
+
+    padding: 35px 25px;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 15px;
+
+    transition: 0.25s;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.feature-icon {
+    font-size: 45px;
+
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    color: #666;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   DESTINATIONS
+===================================================== */
+
+.destinations {
+    background: #f7f8fa;
+}
+
+.destination-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+.destination-card {
+    background: white;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.07);
+
+    transition: 0.25s;
+}
+
+.destination-card:hover {
+    transform: translateY(-7px);
+}
+
+.destination-image {
+    height: 220px;
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+
+    align-items: end;
+
+    padding: 20px;
+
+    color: white;
+
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.mumbai {
+    background:
+        linear-gradient(transparent, rgba(0,0,0,.7)),
+        url("https://images.unsplash.com/photo-1595658658481-d53d3f999875?auto=format&fit=crop&w=700&q=80")
+        center/cover;
+}
+
+.pune {
+    background:
+        linear-gradient(transparent, rgba(0,0,0,.7)),
+        url("https://images.unsplash.com/photo-1595658658481-d53d3f999875?auto=format&fit=crop&w=700&q=80")
+        center/cover;
+}
+
+.delhi {
+    background:
+        linear-gradient(transparent, rgba(0,0,0,.7)),
+        url("https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=700&q=80")
+        center/cover;
+}
+
+.goa {
+    background:
+        linear-gradient(transparent, rgba(0,0,0,.7)),
+        url("https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=700&q=80")
+        center/cover;
+}
+
+.destination-content {
+    padding: 20px;
+}
+
+.destination-content h3 {
+    margin-bottom: 8px;
+}
+
+.destination-content p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.destination-btn {
+    border: none;
+
+    background: none;
+
+    color: #1473e6;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   HOW IT WORKS
+===================================================== */
+
+.how-it-works {
+    background: white;
+}
+
+.steps {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 30px;
+
+    text-align: center;
+}
+
+.step-number {
+    width: 55px;
+    height: 55px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #1473e6;
+    color: white;
+
+    border-radius: 50%;
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.step h3 {
+    margin-bottom: 10px;
+}
+
+.step p {
+    color: #666;
+}
+
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.about {
+    background: #eef6ff;
+}
+
+.about-container {
+    display: grid;
+
+    grid-template-columns:
+        1.3fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.small-title {
+    color: #1473e6;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.about h2 {
+    font-size: 45px;
+
+    margin: 15px 0 25px;
+}
+
+.about-text p {
+    color: #555;
+
+    line-height: 1.7;
+
+    margin-bottom: 15px;
+}
+
+.primary-btn {
+    margin-top: 15px;
+
+    padding: 14px 25px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #1473e6;
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.about-box {
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.08);
+}
+
+.about-stat {
+    padding: 20px 0;
+
+    border-bottom: 1px solid #eee;
+
+    display: flex;
+
+    justify-content: space-between;
+}
+
+.about-stat:last-child {
+    border-bottom: none;
+}
+
+.about-stat strong {
+    font-size: 30px;
+    color: #1473e6;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+    background: #101820;
+
+    color: white;
+
+    padding: 60px 5% 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr 1fr;
+
+    gap: 50px;
+}
+
+.footer .logo {
+    color: white;
+}
+
+.footer-brand p {
+    margin-top: 15px;
+
+    color: #aaa;
+}
+
+.footer-column {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.footer-column h4 {
+    margin-bottom: 10px;
+}
+
+.footer-column a {
+    color: #aaa;
+
+    transition: 0.2s;
+}
+
+.footer-column a:hover {
+    color: white;
+}
+
+.copyright {
+    max-width: 1200px;
+
+    margin: 50px auto 0;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #333;
+
+    color: #888;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .search-fields {
+        grid-template-columns:
+            1fr 1fr 1fr;
+    }
+
+    .swap-btn {
+        display: none;
+    }
+
+    .feature-grid,
+    .destination-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .steps {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .header {
+        height: 65px;
+    }
+
+    .navbar {
+        position: absolute;
+
+        top: 65px;
+        left: 0;
+        right: 0;
+
+        background: white;
+
+        display: none;
+
+        flex-direction: column;
+
+        padding: 20px;
+
+        border-bottom: 1px solid #ddd;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .hero {
+        padding-top: 60px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .search-fields {
+        grid-template-columns: 1fr;
+    }
+
+    .search-box {
+        padding: 20px;
+    }
+
+    .feature-grid,
+    .destination-grid,
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .bus-result {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .section-heading h2 {
+        font-size: 32px;
+    }
+
+}
