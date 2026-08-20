@@ -885,3 +885,201 @@ section:not(.hero) {
     }
 
 }
+/* ==========================================
+   SEAT SELECTION
+========================================== */
+
+.seat-section {
+    background: #f7f8fa;
+    display: none;
+}
+
+.seat-layout {
+    display: grid;
+
+    grid-template-columns: 1fr 350px;
+
+    gap: 50px;
+
+    align-items: start;
+}
+
+
+/* BUS */
+
+.bus {
+    max-width: 430px;
+
+    margin: auto;
+
+    padding: 30px;
+
+    background: white;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+/* DRIVER */
+
+.driver {
+    background: #101820;
+
+    color: white;
+
+    padding: 15px;
+
+    text-align: center;
+
+    border-radius: 12px;
+
+    margin-bottom: 25px;
+
+    font-weight: bold;
+}
+
+
+/* SEAT ROW */
+
+.seat-row {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr
+        35px
+        1fr
+        1fr;
+
+    gap: 10px;
+
+    margin-bottom: 12px;
+}
+
+
+/* SEAT */
+
+.seat {
+    height: 50px;
+
+    border: 2px solid #1473e6;
+
+    background: white;
+
+    color: #1473e6;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.seat:hover {
+    background: #e8f2ff;
+}
+
+
+/* SELECTED */
+
+.seat.selected {
+    background: #1473e6;
+
+    color: white;
+}
+
+
+/* OCCUPIED */
+
+.seat.occupied {
+    background: #555;
+
+    color: white;
+
+    border-color: #555;
+
+    cursor: not-allowed;
+}
+
+
+/* AISLE */
+
+.aisle {
+    display: block;
+}
+
+
+/* SUMMARY */
+
+.seat-summary {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+.seat-summary h3 {
+    margin-bottom: 12px;
+}
+
+
+.seat-summary p {
+    color: #666;
+
+    line-height: 1.6;
+}
+
+
+.seat-summary hr {
+    border: none;
+
+    border-top: 1px solid #eee;
+
+    margin: 25px 0;
+}
+
+
+.total-price {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin: 30px 0;
+
+    font-size: 20px;
+}
+
+
+.total-price strong {
+    font-size: 28px;
+
+    color: #1473e6;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .seat-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .bus {
+        width: 100%;
+    }
+
+}
