@@ -364,6 +364,359 @@
     </div>
 
 </section>
+<!-- ==========================================
+     PASSENGER DETAILS
+========================================== -->
+
+<section class="passenger-section" id="passengerSection">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <h2>Passenger Details</h2>
+
+            <p>
+                Enter the details of the passenger
+            </p>
+
+        </div>
+
+
+        <div class="passenger-layout">
+
+            <!-- FORM -->
+
+            <div class="passenger-form">
+
+                <div class="form-group">
+
+                    <label for="passengerName">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="passengerName"
+                        placeholder="Enter your full name"
+                    >
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="passengerAge">
+                            Age
+                        </label>
+
+                        <input
+                            type="number"
+                            id="passengerAge"
+                            placeholder="Age"
+                            min="1"
+                            max="100"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="passengerGender">
+                            Gender
+                        </label>
+
+                        <select id="passengerGender">
+
+                            <option value="">
+                                Select Gender
+                            </option>
+
+                            <option value="Male">
+                                Male
+                            </option>
+
+                            <option value="Female">
+                                Female
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="passengerMobile">
+                        Mobile Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="passengerMobile"
+                        placeholder="Enter mobile number"
+                        maxlength="10"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="passengerEmail">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="passengerEmail"
+                        placeholder="Enter email address"
+                    >
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="primary-btn"
+                    id="passengerContinueBtn"
+                >
+                    Continue
+                </button>
+
+            </div>
+
+
+            <!-- BOOKING SUMMARY -->
+
+            <div class="booking-summary">
+
+                <h3>
+                    Journey Summary
+                </h3>
+
+                <p id="passengerJourney">
+                    Pune → Mumbai
+                </p>
+
+                <hr>
+
+                <p>
+                    Selected Seats
+                </p>
+
+                <strong id="passengerSeats">
+                    None
+                </strong>
+
+                <div class="summary-total">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong id="passengerTotal">
+                        ₹0
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ==========================================
+     BOOKING SUMMARY
+========================================== -->
+
+<section class="summary-section" id="summarySection">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <h2>Booking Summary</h2>
+
+            <p>Review your journey before confirming</p>
+
+        </div>
+
+
+        <div class="final-summary">
+
+            <div class="summary-header">
+
+                <h3>🚌 KrishGoooo</h3>
+
+                <span id="summaryBookingStatus">
+                    Review Booking
+                </span>
+
+            </div>
+
+
+            <!-- JOURNEY -->
+
+            <div class="summary-block">
+
+                <h4>Journey Details</h4>
+
+                <p>
+                    <strong>Route:</strong>
+                    <span id="summaryRoute">
+                        Pune → Mumbai
+                    </span>
+                </p>
+
+                <p>
+                    <strong>Bus:</strong>
+                    <span id="summaryBus">
+                        KrishGoooo Express
+                    </span>
+                </p>
+
+                <p>
+                    <strong>Departure:</strong>
+                    <span id="summaryDeparture">
+                        07:30 AM
+                    </span>
+                </p>
+
+                <p>
+                    <strong>Arrival:</strong>
+                    <span id="summaryArrival">
+                        01:30 PM
+                    </span>
+                </p>
+
+                <p>
+                    <strong>Date:</strong>
+                    <span id="summaryDate">
+                        -
+                    </span>
+                </p>
+
+            </div>
+
+
+            <hr>
+
+
+            <!-- PASSENGER -->
+
+            <div class="summary-block">
+
+                <h4>Passenger Details</h4>
+
+                <p>
+                    <strong>Name:</strong>
+                    <span id="summaryName">
+                        -
+                    </span>
+                </p>
+
+                <p>
+                    <strong>Age:</strong>
+                    <span id="summaryAge">
+                        -
+                    </span>
+                </p>
+
+                <p>
+                    <strong>Gender:</strong>
+                    <span id="summaryGender">
+                        -
+                    </span>
+                </p>
+
+                <p>
+                    <strong>Mobile:</strong>
+                    <span id="summaryMobile">
+                        -
+                    </span>
+                </p>
+
+                <p>
+                    <strong>Email:</strong>
+                    <span id="summaryEmail">
+                        -
+                    </span>
+                </p>
+
+            </div>
+
+
+            <hr>
+
+
+            <!-- SEATS -->
+
+            <div class="summary-block">
+
+                <h4>Seat Details</h4>
+
+                <p>
+                    <strong>Selected Seats:</strong>
+                    <span id="summarySeats">
+                        -
+                    </span>
+                </p>
+
+                <p>
+                    <strong>Passengers:</strong>
+                    <span id="summaryPassengers">
+                        0
+                    </span>
+                </p>
+
+            </div>
+
+
+            <hr>
+
+
+            <!-- TOTAL -->
+
+            <div class="final-total">
+
+                <span>
+                    Total Amount
+                </span>
+
+                <strong id="summaryTotal">
+                    ₹0
+                </strong>
+
+            </div>
+
+
+            <!-- CONFIRM -->
+
+            <button
+                type="button"
+                class="primary-btn confirm-btn"
+                id="confirmBookingBtn"
+            >
+                Confirm Booking
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
 
 
     <!-- ================= FEATURES ================= -->
@@ -874,6 +1227,200 @@
     <!-- ================= JAVASCRIPT ================= -->
 
     <script src="script.js"></script>
+    <!-- ==========================================
+     BOOKING CONFIRMATION
+========================================== -->
+
+<section class="confirmation-section" id="confirmationSection">
+
+    <div class="container">
+
+        <div class="confirmation-card">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <h2>
+                Booking Confirmed!
+            </h2>
+
+            <p class="confirmation-message">
+                Your KrishGoooo journey has been successfully booked.
+            </p>
+
+
+            <!-- BOOKING ID -->
+
+            <div class="booking-id-box">
+
+                <span>
+                    Booking ID
+                </span>
+
+                <strong id="bookingId">
+                    KG000000
+                </strong>
+
+            </div>
+
+
+            <hr>
+
+
+            <!-- TICKET -->
+
+            <div class="ticket-details">
+
+                <h3>
+                    🚌 KrishGoooo
+                </h3>
+
+
+                <div class="ticket-route">
+
+                    <div>
+
+                        <small>
+                            FROM
+                        </small>
+
+                        <strong id="ticketFrom">
+                            Pune
+                        </strong>
+
+                    </div>
+
+
+                    <div class="route-arrow">
+                        →
+                    </div>
+
+
+                    <div>
+
+                        <small>
+                            TO
+                        </small>
+
+                        <strong id="ticketTo">
+                            Mumbai
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="ticket-grid">
+
+                    <div>
+
+                        <small>
+                            Passenger
+                        </small>
+
+                        <strong id="ticketPassenger">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <small>
+                            Seat
+                        </small>
+
+                        <strong id="ticketSeat">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <small>
+                            Date
+                        </small>
+
+                        <strong id="ticketDate">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <small>
+                            Bus
+                        </small>
+
+                        <strong id="ticketBus">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <small>
+                            Mobile
+                        </small>
+
+                        <strong id="ticketMobile">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <small>
+                            Total Paid
+                        </small>
+
+                        <strong id="ticketTotal">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="ticket-actions">
+
+                <button
+                    type="button"
+                    class="primary-btn"
+                    id="printTicketBtn"
+                >
+                    Print Ticket
+                </button>
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    id="newBookingBtn"
+                >
+                    New Booking
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 </body>
 
