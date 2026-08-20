@@ -874,3 +874,721 @@ document.addEventListener(
 
     }
 );
+// ======================================================
+// 16. PASSENGER DETAILS
+// ======================================================
+
+const continueBtn =
+    document.getElementById("continueBtn");
+
+const passengerSection =
+    document.getElementById("passengerSection");
+
+const passengerJourney =
+    document.getElementById("passengerJourney");
+
+const passengerSeats =
+    document.getElementById("passengerSeats");
+
+const passengerTotal =
+    document.getElementById("passengerTotal");
+
+
+// ======================================================
+// 17. OPEN PASSENGER DETAILS
+// ======================================================
+
+if (continueBtn) {
+
+    continueBtn.addEventListener(
+        "click",
+        function () {
+
+            // Check whether a seat is selected
+
+            if (selectedSeats.length === 0) {
+
+                alert(
+                    "Please select at least one seat."
+                );
+
+                return;
+
+            }
+
+
+            // Show journey
+
+            if (passengerJourney) {
+
+                passengerJourney.textContent =
+                    `${fromInput.value} → ${toInput.value}`;
+
+            }
+
+
+            // Show selected seats
+
+            if (passengerSeats) {
+
+                passengerSeats.textContent =
+                    selectedSeats.join(", ");
+
+            }
+
+
+            // Calculate total
+
+            const total =
+                selectedSeats.length *
+                selectedBusPrice;
+
+
+            if (passengerTotal) {
+
+                passengerTotal.textContent =
+                    `₹${total}`;
+
+            }
+
+
+            // Show passenger section
+
+            if (passengerSection) {
+
+                passengerSection.style.display =
+                    "block";
+
+
+                passengerSection.scrollIntoView({
+
+                    behavior: "smooth"
+
+                });
+
+            }
+
+        }
+    );
+
+}
+// ======================================================
+// 18. PASSENGER FORM VALIDATION
+// ======================================================
+
+const passengerContinueBtn =
+    document.getElementById("passengerContinueBtn");
+
+const passengerName =
+    document.getElementById("passengerName");
+
+const passengerAge =
+    document.getElementById("passengerAge");
+
+const passengerGender =
+    document.getElementById("passengerGender");
+
+const passengerMobile =
+    document.getElementById("passengerMobile");
+
+const passengerEmail =
+    document.getElementById("passengerEmail");
+
+
+if (passengerContinueBtn) {
+
+    passengerContinueBtn.addEventListener(
+        "click",
+        function () {
+
+            const name =
+                passengerName.value.trim();
+
+            const age =
+                passengerAge.value.trim();
+
+            const gender =
+                passengerGender.value;
+
+            const mobile =
+                passengerMobile.value.trim();
+
+            const email =
+                passengerEmail.value.trim();
+
+
+            // ------------------------------------------
+            // NAME
+            // ------------------------------------------
+
+            if (name === "") {
+
+                alert(
+                    "Please enter passenger name."
+                );
+
+                passengerName.focus();
+
+                return;
+
+            }
+
+
+            // ------------------------------------------
+            // AGE
+            // ------------------------------------------
+
+            if (age === "") {
+
+                alert(
+                    "Please enter passenger age."
+                );
+
+                passengerAge.focus();
+
+                return;
+
+            }
+
+
+            if (
+                Number(age) < 1 ||
+                Number(age) > 100
+            ) {
+
+                alert(
+                    "Please enter a valid age."
+                );
+
+                passengerAge.focus();
+
+                return;
+
+            }
+
+
+            // ------------------------------------------
+            // GENDER
+            // ------------------------------------------
+
+            if (gender === "") {
+
+                alert(
+                    "Please select gender."
+                );
+
+                passengerGender.focus();
+
+                return;
+
+            }
+
+
+            // ------------------------------------------
+            // MOBILE
+            // ------------------------------------------
+
+            if (!/^[0-9]{10}$/.test(mobile)) {
+
+                alert(
+                    "Please enter a valid 10-digit mobile number."
+                );
+
+                passengerMobile.focus();
+
+                return;
+
+            }
+
+
+            // ------------------------------------------
+            // EMAIL
+            // ------------------------------------------
+
+            if (
+                !/^[^\s@]+@[^\s@]+\.[^\s@]+$/
+                    .test(email)
+            ) {
+
+                alert(
+                    "Please enter a valid email address."
+                );
+
+                passengerEmail.focus();
+
+                return;
+
+            }
+
+
+            // ------------------------------------------
+            // SUCCESS
+            // ------------------------------------------
+
+            alert(
+                "Passenger details saved successfully!"
+            );
+
+        }
+    );
+
+}
+// ======================================================
+// 19. BOOKING SUMMARY
+// ======================================================
+
+const summarySection =
+    document.getElementById("summarySection");
+
+const summaryRoute =
+    document.getElementById("summaryRoute");
+
+const summaryBus =
+    document.getElementById("summaryBus");
+
+const summaryDeparture =
+    document.getElementById("summaryDeparture");
+
+const summaryArrival =
+    document.getElementById("summaryArrival");
+
+const summaryDate =
+    document.getElementById("summaryDate");
+
+const summaryName =
+    document.getElementById("summaryName");
+
+const summaryAge =
+    document.getElementById("summaryAge");
+
+const summaryGender =
+    document.getElementById("summaryGender");
+
+const summaryMobile =
+    document.getElementById("summaryMobile");
+
+const summaryEmail =
+    document.getElementById("summaryEmail");
+
+const summarySeats =
+    document.getElementById("summarySeats");
+
+const summaryPassengers =
+    document.getElementById("summaryPassengers");
+
+const summaryTotal =
+    document.getElementById("summaryTotal");
+
+const summaryBusStatus =
+    document.getElementById(
+        "summaryBookingStatus"
+    );
+
+const confirmBookingBtn =
+    document.getElementById(
+        "confirmBookingBtn"
+    );
+
+
+// ======================================================
+// 20. SHOW BOOKING SUMMARY
+// ======================================================
+
+if (passengerContinueBtn) {
+
+    passengerContinueBtn.addEventListener(
+        "click",
+        function () {
+
+            const name =
+                passengerName.value.trim();
+
+            const age =
+                passengerAge.value.trim();
+
+            const gender =
+                passengerGender.value;
+
+            const mobile =
+                passengerMobile.value.trim();
+
+            const email =
+                passengerEmail.value.trim();
+
+
+            // ------------------------------------------
+            // VALIDATE NAME
+            // ------------------------------------------
+
+            if (name === "") {
+
+                alert(
+                    "Please enter passenger name."
+                );
+
+                passengerName.focus();
+
+                return;
+
+            }
+
+
+            // ------------------------------------------
+            // VALIDATE AGE
+            // ------------------------------------------
+
+            if (
+                age === "" ||
+                Number(age) < 1 ||
+                Number(age) > 100
+            ) {
+
+                alert(
+                    "Please enter a valid age."
+                );
+
+                passengerAge.focus();
+
+                return;
+
+            }
+
+
+            // ------------------------------------------
+            // VALIDATE GENDER
+            // ------------------------------------------
+
+            if (gender === "") {
+
+                alert(
+                    "Please select gender."
+                );
+
+                passengerGender.focus();
+
+                return;
+
+            }
+
+
+            // ------------------------------------------
+            // VALIDATE MOBILE
+            // ------------------------------------------
+
+            if (!/^[0-9]{10}$/.test(mobile)) {
+
+                alert(
+                    "Please enter a valid 10-digit mobile number."
+                );
+
+                passengerMobile.focus();
+
+                return;
+
+            }
+
+
+            // ------------------------------------------
+            // VALIDATE EMAIL
+            // ------------------------------------------
+
+            if (
+                !/^[^\s@]+@[^\s@]+\.[^\s@]+$/
+                    .test(email)
+            ) {
+
+                alert(
+                    "Please enter a valid email address."
+                );
+
+                passengerEmail.focus();
+
+                return;
+
+            }
+
+
+            // ------------------------------------------
+            // GET SELECTED BUS
+            // ------------------------------------------
+
+            const selectedBus =
+                selectedBusInfo.textContent;
+
+
+            // ------------------------------------------
+            // DISPLAY SUMMARY
+            // ------------------------------------------
+
+            summaryRoute.textContent =
+                `${fromInput.value} → ${toInput.value}`;
+
+
+            summaryBus.textContent =
+                selectedBus.split("|")[0].trim();
+
+
+            summaryDeparture.textContent =
+                "Selected bus time";
+
+
+            summaryArrival.textContent =
+                "Selected bus arrival";
+
+
+            summaryDate.textContent =
+                departureInput.value;
+
+
+            summaryName.textContent =
+                name;
+
+
+            summaryAge.textContent =
+                age;
+
+
+            summaryGender.textContent =
+                gender;
+
+
+            summaryMobile.textContent =
+                mobile;
+
+
+            summaryEmail.textContent =
+                email;
+
+
+            summarySeats.textContent =
+                selectedSeats.join(", ");
+
+
+            summaryPassengers.textContent =
+                selectedSeats.length;
+
+
+            const total =
+                selectedSeats.length *
+                selectedBusPrice;
+
+
+            summaryTotal.textContent =
+                `₹${total}`;
+
+
+            summaryBusStatus.textContent =
+                "Ready to Confirm";
+
+
+            // ------------------------------------------
+            // SHOW SUMMARY
+            // ------------------------------------------
+
+            summarySection.style.display =
+                "block";
+
+
+            summarySection.scrollIntoView({
+
+                behavior: "smooth"
+
+            });
+
+        }
+    );
+
+}
+// ======================================================
+// 21. BOOKING CONFIRMATION
+// ======================================================
+
+const confirmationSection =
+    document.getElementById(
+        "confirmationSection"
+    );
+
+const bookingId =
+    document.getElementById(
+        "bookingId"
+    );
+
+const ticketFrom =
+    document.getElementById(
+        "ticketFrom"
+    );
+
+const ticketTo =
+    document.getElementById(
+        "ticketTo"
+    );
+
+const ticketPassenger =
+    document.getElementById(
+        "ticketPassenger"
+    );
+
+const ticketSeat =
+    document.getElementById(
+        "ticketSeat"
+    );
+
+const ticketDate =
+    document.getElementById(
+        "ticketDate"
+    );
+
+const ticketBus =
+    document.getElementById(
+        "ticketBus"
+    );
+
+const ticketMobile =
+    document.getElementById(
+        "ticketMobile"
+    );
+
+const ticketTotal =
+    document.getElementById(
+        "ticketTotal"
+    );
+
+
+// ======================================================
+// 22. CONFIRM BOOKING
+// ======================================================
+
+if (confirmBookingBtn) {
+
+    confirmBookingBtn.addEventListener(
+        "click",
+        function () {
+
+            // ------------------------------------------
+            // GENERATE BOOKING ID
+            // ------------------------------------------
+
+            const randomNumber =
+                Math.floor(
+                    100000 +
+                    Math.random() * 900000
+                );
+
+
+            const generatedBookingId =
+                "KG" + randomNumber;
+
+
+            bookingId.textContent =
+                generatedBookingId;
+
+
+            // ------------------------------------------
+            // TICKET INFORMATION
+            // ------------------------------------------
+
+            ticketFrom.textContent =
+                fromInput.value;
+
+
+            ticketTo.textContent =
+                toInput.value;
+
+
+            ticketPassenger.textContent =
+                passengerName.value;
+
+
+            ticketSeat.textContent =
+                selectedSeats.join(", ");
+
+
+            ticketDate.textContent =
+                departureInput.value;
+
+
+            ticketBus.textContent =
+                selectedBusInfo.textContent
+                    .split("|")[0]
+                    .trim();
+
+
+            ticketMobile.textContent =
+                passengerMobile.value;
+
+
+            const finalTotal =
+                selectedSeats.length *
+                selectedBusPrice;
+
+
+            ticketTotal.textContent =
+                `₹${finalTotal}`;
+
+
+            // ------------------------------------------
+            // SHOW CONFIRMATION
+            // ------------------------------------------
+
+            confirmationSection.style.display =
+                "block";
+
+
+            confirmationSection.scrollIntoView({
+
+                behavior: "smooth"
+
+            });
+
+        }
+    );
+
+}
+
+
+// ======================================================
+// 23. PRINT TICKET
+// ======================================================
+
+const printTicketBtn =
+    document.getElementById(
+        "printTicketBtn"
+    );
+
+
+if (printTicketBtn) {
+
+    printTicketBtn.addEventListener(
+        "click",
+        function () {
+
+            window.print();
+
+        }
+    );
+
+}
+
+
+// ======================================================
+// 24. NEW BOOKING
+// ======================================================
+
+const newBookingBtn =
+    document.getElementById(
+        "newBookingBtn"
+    );
+
+
+if (newBookingBtn) {
+
+    newBookingBtn.addEventListener(
+        "click",
+        function () {
+
+            window.location.reload();
+
+        }
+    );
+
+}
